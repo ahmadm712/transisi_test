@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_transisi/cubits/auth_cubit/auth_cubit.dart';
+import 'package:test_transisi/cubits/create_user_cubit/create_user_cubit.dart';
 import 'package:test_transisi/cubits/detail_user_cubit/detail_user_cubit.dart';
 import 'package:test_transisi/cubits/list_users_cubit/list_users_cubit.dart';
 import 'package:test_transisi/services/api_services.dart';
@@ -29,6 +30,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => DetailUserCubit(apiServices),
+        ),
+        BlocProvider(
+          create: (context) => CreateUserCubit(apiServices),
         ),
       ],
       child: MaterialApp(

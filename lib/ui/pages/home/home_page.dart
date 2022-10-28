@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_transisi/cubits/list_users_cubit/list_users_cubit.dart';
 import 'package:test_transisi/data/models/list_user_model.dart';
+import 'package:test_transisi/ui/pages/create_user/create_user.dart';
 import 'package:test_transisi/ui/pages/detail_user/detail_user.dart';
 
 class HomePage extends StatefulWidget {
@@ -30,6 +31,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        title: const Text('Home'),
+        centerTitle: true,
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.pushNamed(context, CreateUser.routeName);
+        },
+        label: const Text('Add User'),
+        backgroundColor: Colors.blueGrey,
+      ),
       body: BlocBuilder<ListUsersCubit, ListUsersState>(
         builder: (context, state) {
           if (state is ListUsersHasData ||
