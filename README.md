@@ -3,14 +3,11 @@
 A new Flutter project.
 
 ## Getting Started
+### Final APK Result
+/final_apk 
+[APK](https://github.com/ahmadm712/transisi_test/tree/main/final_apk)
 
-This project is a starting point for a Flutter application.
+### For Login
+email : "eve.holt@reqres.in" or other email in https://reqres.in
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+password : "whatever" you can field whatever you want
