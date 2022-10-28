@@ -6,7 +6,6 @@ import 'package:test_transisi/cubits/detail_user_cubit/detail_user_cubit.dart';
 import 'package:test_transisi/cubits/list_users_cubit/list_users_cubit.dart';
 import 'package:test_transisi/services/api_services.dart';
 import 'package:test_transisi/ui/pages/auth/login_page.dart';
-import 'package:test_transisi/ui/pages/home/home_page.dart';
 import 'package:test_transisi/utils/routes.dart';
 
 void main() {
