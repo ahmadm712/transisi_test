@@ -25,17 +25,4 @@ class AuthCubit extends Cubit<AuthState> {
       emit(AuthFailed(error: e.message));
     }
   }
-
-  // Register Method
-  void register({required String email, required String password}) async {
-    try {
-      emit(AuthLoading());
-      final response =
-          await apiServices.register(email: email, password: password);
-
-      emit(AuthSucces(token: response.token));
-    } on ServerFailure catch (e) {
-      emit(AuthFailed(error: e.message));
-    }
-  }
 }

@@ -24,7 +24,7 @@ class ListUserResponse {
   int? perPage;
   int? total;
   int? totalPages;
-  List<Users>? data;
+  List<User>? data;
   Support? support;
 
   factory ListUserResponse.fromJson(Map<String, dynamic> json) =>
@@ -33,7 +33,7 @@ class ListUserResponse {
         perPage: json["per_page"],
         total: json["total"],
         totalPages: json["total_pages"],
-        data: List<Users>.from(json["data"].map((x) => Users.fromJson(x))),
+        data: List<User>.from(json["data"].map((x) => User.fromJson(x))),
         support: Support.fromJson(json["support"]),
       );
 
@@ -47,8 +47,8 @@ class ListUserResponse {
       };
 }
 
-class Users {
-  Users({
+class User {
+  User({
     this.id,
     this.email,
     this.firstName,
@@ -62,7 +62,7 @@ class Users {
   String? lastName;
   String? avatar;
 
-  factory Users.fromJson(Map<String, dynamic> json) => Users(
+  factory User.fromJson(Map<String, dynamic> json) => User(
         id: json["id"],
         email: json["email"],
         firstName: json["first_name"],

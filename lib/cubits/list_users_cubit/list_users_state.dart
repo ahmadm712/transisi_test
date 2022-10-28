@@ -3,8 +3,8 @@ part of 'list_users_cubit.dart';
 
 abstract class ListUsersState extends Equatable {
   ListUsersState(
-      {this.users = const <Users>[], required this.hasReachedMaximum});
-  List<Users> users;
+      {this.users = const <User>[], required this.hasReachedMaximum});
+  List<User> users;
   bool hasReachedMaximum;
   @override
   List<Object> get props => [users];
@@ -17,13 +17,13 @@ class ListUsersInitial extends ListUsersState {
 class ListUsersLoading extends ListUsersState {
   final bool isInitial;
   ListUsersLoading(
-    final List<Users> users,
+    final List<User> users,
     this.isInitial,
   ) : super(users: users, hasReachedMaximum: false);
 }
 
 class ListUsersHasData extends ListUsersState {
-  List<Users> data;
+  List<User> data;
   final bool hasReachedMaximum;
   ListUsersHasData({
     required this.data,

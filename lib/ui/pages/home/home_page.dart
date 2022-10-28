@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_transisi/cubits/list_users_cubit/list_users_cubit.dart';
 import 'package:test_transisi/data/models/list_user_model.dart';
+import 'package:test_transisi/ui/pages/detail_user/detail_user.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -76,7 +77,7 @@ class UserCard extends StatelessWidget {
     required this.user,
   }) : super(key: key);
 
-  final Users user;
+  final User user;
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +85,13 @@ class UserCard extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       height: 120,
       child: ListTile(
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(
+            context,
+            DetailUserPage.routeName,
+            arguments: user.id.toString(),
+          );
+        },
         leading: SizedBox(
           height: 50,
           width: 50,

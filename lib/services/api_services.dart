@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:test_transisi/data/models/detail_user_model.dart';
 import 'package:test_transisi/data/models/list_user_model.dart';
 import 'package:test_transisi/data/models/login_succes_model.dart';
 import 'package:test_transisi/data/models/register_succes_model.dart';
@@ -27,8 +28,8 @@ class ApiServices {
       } else {
         throw ServerFailure(response.body);
       }
-    } catch (e) {
-      throw ServerFailure(e.toString());
+    } on ServerFailure catch (e) {
+      throw ServerFailure(e.message);
     }
   }
 
@@ -66,6 +67,24 @@ class ApiServices {
 
       if (response.statusCode == 200) {
         return listUserResponseFromJson(response.body);
+      } else {
+        throw ServerFailure(response.body);
+      }
+    } on ServerFailure catch (e) {
+      throw ServerFailure(e.message);
+    }
+  }
+
+  Future<DetailUserResponse> getDetailUser({required String id}) async {
+    try {
+      final response = await http.get(
+        Uri.parse(
+          "${baseUrl}users/$id",
+        ),
+      );
+
+      if (response.statusCode == 200) {
+        return detailUserResponseFromJson(response.body);
       } else {
         throw ServerFailure(response.body);
       }
